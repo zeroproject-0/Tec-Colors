@@ -4,7 +4,7 @@ import { sequelize } from './database/database.js';
 import './models/Color.js';
 
 try {
-	await sequelize.sync({ force: false });
+	await sequelize.sync({ force: true });
 	console.log('Connection has been established successfully.');
 
 	app.listen(app.get('PORT'), () => {

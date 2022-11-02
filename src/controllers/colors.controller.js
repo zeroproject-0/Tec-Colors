@@ -2,6 +2,7 @@ import { Color } from '../models/Color.js';
 
 export const getColors = async (req, res) => {
 	const { type } = req.params;
+	console.log(type);
 
 	try {
 		const colors = await Color.findAll();
@@ -53,6 +54,7 @@ export const postColor = async (req, res) => {
 
 		res.json(newColor);
 	} catch (error) {
+		console.log(error);
 		return res.status(500).json({ message: 'Error al insertar el color' });
 	}
 };

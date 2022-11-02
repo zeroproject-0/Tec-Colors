@@ -9,8 +9,8 @@ export const Color = sequelize.define(
 			validate: {
 				min: 0,
 				max: 255,
-				allowNull: false,
 			},
+			allowNull: false,
 		},
 
 		g: {
@@ -18,8 +18,8 @@ export const Color = sequelize.define(
 			validate: {
 				min: 0,
 				max: 255,
-				allowNull: false,
 			},
+			allowNull: false,
 		},
 
 		b: {
@@ -27,15 +27,13 @@ export const Color = sequelize.define(
 			validate: {
 				min: 0,
 				max: 255,
-				allowNull: false,
 			},
+			allowNull: false,
 		},
 
 		like: {
 			type: DataTypes.BOOLEAN,
-			validate: {
-				allowNull: false,
-			},
+			allowNull: false,
 		},
 	},
 	{
