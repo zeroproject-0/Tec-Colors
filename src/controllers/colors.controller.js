@@ -2,7 +2,6 @@ import { Color } from '../models/Color.js';
 
 export const getColors = async (req, res) => {
 	const { type } = req.params;
-	console.log(type);
 
 	try {
 		const colors = await Color.findAll();
@@ -43,12 +42,12 @@ export const getColors = async (req, res) => {
 };
 
 export const postColor = async (req, res) => {
-	const { r, g, b, like } = req.body;
+	const { red, green, blue, like } = req.body;
 	try {
 		const newColor = await Color.create({
-			r,
-			g,
-			b,
+			r: red,
+			g: green,
+			b: blue,
 			like,
 		});
 
