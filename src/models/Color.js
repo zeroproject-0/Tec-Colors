@@ -31,6 +31,11 @@ export const Color = sequelize.define(
 			allowNull: false,
 		},
 
+		isTextWhite: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+		},
+
 		like: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false,
