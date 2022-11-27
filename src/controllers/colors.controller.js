@@ -8,9 +8,9 @@ export const getColors = async (req, res) => {
 
 		switch (type) {
 			case 'csv':
-				let csv = 'r|g|b|like\n';
+				let csv = 'r|g|b|isTextWhite|like\n';
 				colors.forEach((color) => {
-					csv += `${color.r}|${color.g}|${color.b}|${color.like}\n`;
+					csv += `${color.r}|${color.g}|${color.b}|${color.isTextWhite}|${color.like}\n`;
 				});
 				res.set('Content-Type', 'text/csv');
 				res.send(csv);
@@ -23,6 +23,7 @@ export const getColors = async (req, res) => {
 							(color) =>
 								`<color>\n
                   <like>${color.like}</like>\n
+                  <isTextWhite>${color.isTextWhite}</isTextWhite>\n
                   <r>${color.r}</r>\n
                   <g>${color.g}</g>\n
                   <b>${color.b}</b>\n
@@ -42,12 +43,13 @@ export const getColors = async (req, res) => {
 };
 
 export const postColor = async (req, res) => {
-	const { red, green, blue, like } = req.body;
+	const { red, green, blue, isTextWhite, like } = req.body;
 	try {
 		const newColor = await Color.create({
 			r: red,
 			g: green,
 			b: blue,
+			isTextWhite,
 			like,
 		});
 
